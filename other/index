@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0" />
+	<title>
+		Auto script VPS by Biztro
+	</title>
+	<link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+	<style>
+		body {
+			padding: 25px;
+			background-color: white;
+			color: black;
+			font-size: 25px;
+		}
+
+		.dark-mode {
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+<center>
+<br><br><br>
+	<h1>Biztro VPN</h1>
+	<div>
+		<button onclick="darkMode()">Darkmode</button>
+	</div>
+	<script>
+		function darkMode() {
+			var element = document.body;
+			element.classList.toggle("dark-mode");
+		}
+	</script>
+	</center>
+	</div>
+        <div class="footer">
+            <footer>
+		<p align="center">
+		
+            <a href="https://github.com/envir0nn/" target="_blank"><img src="https://img.shields.io/badge/link-Github-blue"></a>
+			    </p>
+</div>
+		<p align="center">
+            <a href="https://paypal.me/dzbogel" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-yellow"></a>
+</p>
+            </footer>
+        </div>
+</body>
+</html>
