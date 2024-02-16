@@ -1,0 +1,449 @@
+{
+  "log" : {
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10000,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+        },
+      "tag": "api"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10001",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "286a4638-428e-41c7-9e2a-32ee25e8890a",
+            "alterId": 0
+#vmess
+          }
+        ]
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10002",
+      "protocol": "vless",
+      "settings": {
+        "decryption":"none",
+        "clients": [
+          {
+            "id": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#vless
+          }
+        ]
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/vless",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10003",
+      "protocol": "trojan",
+      "settings": {
+        "decryption":"none",
+        "clients": [
+          {
+            "password": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#trojan
+#& junaida 2026-11-07
+},{"password": "537b6ba0-0a04-44c4-b4f1-d0fb77586629","email": "junaida"
+#& sangatmanis 2026-11-07
+},{"password": "982c4eb7-75b5-4403-a5b3-acce3c9aaa9a","email": "sangatmanis"
+#& marta 2026-11-07
+},{"password": "4aa18160-6d87-4a5f-aa75-cf32e88cb3b5","email": "marta"
+#& ndutz 2026-11-07
+},{"password": "f80fad24-dd50-4108-becb-b9adb5ac1f70","email": "ndutz"
+#& basilia 2026-11-07
+},{"password": "b785aaf0-5626-4bc2-b672-5c2a5dee9068","email": "basilia"
+#& nurhamdah 2026-11-07
+},{"password": "c0bee67f-7008-45d0-89ed-8e7e38715b74","email": "nurhamdah"
+#& leha 2026-11-07
+},{"password": "3aab40d8-2fd1-4003-8e13-602dd137c285","email": "leha"
+#& erna 2026-11-07
+},{"password": "68fcce08-cd7d-436d-80c9-e5554a7b3ad9","email": "erna"
+#& sabrina 2026-11-07
+},{"password": "2c2f2f7b-f9b1-4013-a402-bb8d1bda03e0","email": "sabrina"
+#& pakde 2026-11-07
+},{"password": "a6c24bf5-047c-4656-89bc-616efac8b511","email": "pakde"
+#& raka 2026-11-07
+},{"password": "6d22d82d-1d7e-473d-891d-065bfdc8ab32","email": "raka"
+#& fitri 2026-11-07
+},{"password": "0ab85a4c-c07c-4724-a738-8144792e868d","email": "fitri"
+#& tritura 2026-11-07
+},{"password": "38a269be-9196-49de-a71b-791ff3d73eed","email": "tritura"
+#& anton 2026-11-07
+},{"password": "5cbd267b-cba8-4881-9c3e-ea5096a92820","email": "anton"
+#& rumah 2026-11-07
+},{"password": "a612e772-f407-4b48-bf3c-764f28bf9da3","email": "rumah"
+          }
+        ]
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/trojan",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10004",
+      "protocol": "shadowsocks",
+      "settings": {
+        "clients": [
+            {
+              "method": "aes-256-gcm",
+              "password": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#shadowsocks
+            }
+          ],
+        "network": "tcp,udp"
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/shadowsocks",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10005",
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "2022-blake3-aes-256-gcm",
+        "password": "UQ3w2q98BItd3DPgyctdoJw4cqQFmY59ppiDQdqMKbw=",
+        "clients": [
+          {
+            "password": "gv5gp9oyQmPB4mWnq+6LICXYfnFHyRUbCfcPIHb+PQY="
+#shadowsocks2022
+          }
+        ],
+        "network": "tcp,udp"
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/shadowsocks2022",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "10006",
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "accounts": [
+            {
+              "user": "private",
+              "pass": "server"
+#socks
+            }
+          ],
+        "udp": true,
+        "ip": "127.0.0.1"
+      },
+      "streamSettings":{
+        "network": "ws",
+        "wsSettings": {
+          "path": "/socks5",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20001",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "286a4638-428e-41c7-9e2a-32ee25e8890a",
+            "alterId": 0
+#vmess-grpc
+          }
+        ]
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "vmess-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20002",
+      "protocol": "vless",
+      "settings": {
+        "decryption":"none",
+        "clients": [
+          {
+            "id": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#vless-grpc
+          }
+        ]
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "vless-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20003",
+      "protocol": "trojan",
+      "settings": {
+        "decryption":"none",
+        "clients": [
+          {
+            "password": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#trojan-grpc
+#& junaida 2026-11-07
+},{"password": "537b6ba0-0a04-44c4-b4f1-d0fb77586629","email": "junaida"
+#& sangatmanis 2026-11-07
+},{"password": "982c4eb7-75b5-4403-a5b3-acce3c9aaa9a","email": "sangatmanis"
+#& marta 2026-11-07
+},{"password": "4aa18160-6d87-4a5f-aa75-cf32e88cb3b5","email": "marta"
+#& ndutz 2026-11-07
+},{"password": "f80fad24-dd50-4108-becb-b9adb5ac1f70","email": "ndutz"
+#& basilia 2026-11-07
+},{"password": "b785aaf0-5626-4bc2-b672-5c2a5dee9068","email": "basilia"
+#& nurhamdah 2026-11-07
+},{"password": "c0bee67f-7008-45d0-89ed-8e7e38715b74","email": "nurhamdah"
+#& leha 2026-11-07
+},{"password": "3aab40d8-2fd1-4003-8e13-602dd137c285","email": "leha"
+#& erna 2026-11-07
+},{"password": "68fcce08-cd7d-436d-80c9-e5554a7b3ad9","email": "erna"
+#& sabrina 2026-11-07
+},{"password": "2c2f2f7b-f9b1-4013-a402-bb8d1bda03e0","email": "sabrina"
+#& pakde 2026-11-07
+},{"password": "a6c24bf5-047c-4656-89bc-616efac8b511","email": "pakde"
+#& raka 2026-11-07
+},{"password": "6d22d82d-1d7e-473d-891d-065bfdc8ab32","email": "raka"
+#& fitri 2026-11-07
+},{"password": "0ab85a4c-c07c-4724-a738-8144792e868d","email": "fitri"
+#& tritura 2026-11-07
+},{"password": "38a269be-9196-49de-a71b-791ff3d73eed","email": "tritura"
+#& anton 2026-11-07
+},{"password": "5cbd267b-cba8-4881-9c3e-ea5096a92820","email": "anton"
+#& rumah 2026-11-07
+},{"password": "a612e772-f407-4b48-bf3c-764f28bf9da3","email": "rumah"
+          }
+        ],
+        "udp": true
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trojan-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20004",
+      "protocol": "shadowsocks",
+      "settings": {
+        "clients": [
+            {
+              "method": "aes-256-gcm",
+              "password": "286a4638-428e-41c7-9e2a-32ee25e8890a"
+#shadowsocks-grpc
+            }
+          ],
+        "network": "tcp,udp"
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "shadowsocks-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20005",
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "2022-blake3-aes-256-gcm",
+        "password": "UQ3w2q98BItd3DPgyctdoJw4cqQFmY59ppiDQdqMKbw=",
+        "clients": [
+          {
+            "password": "gv5gp9oyQmPB4mWnq+6LICXYfnFHyRUbCfcPIHb+PQY="
+#shadowsocks2022-grpc
+          }
+        ],
+        "network": "tcp,udp"
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "shadowsocks2022-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": "20006",
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "accounts": [
+            {
+              "user": "private",
+              "pass": "server"
+#socks-grpc
+            }
+          ],
+        "udp": true,
+        "ip": "127.0.0.1"
+      },
+      "streamSettings":{
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "socks5-grpc",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.0.0.0/24",
+          "192.0.2.0/24",
+          "192.168.0.0/16",
+          "198.18.0.0/15",
+          "198.51.100.0/24",
+          "203.0.113.0/24",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+      {
+        "type": "field",
+        "outboundTag": "blocked",
+        "protocol": [
+          "bittorrent"
+        ]
+      }
+    ]
+  },
+  "stats": {},
+  "api": {
+    "services": [
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true,
+      "statsOutboundUplink" : true,
+      "statsOutboundDownlink" : true
+    }
+  }
+}
